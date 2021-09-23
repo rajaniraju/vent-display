@@ -203,7 +203,7 @@ Breath Plot: COVID-19 Respiration Analysis Software
 <style>
 /* The Modal (background) */
 .modal {
-  display:none; /* Hidden by default */
+   display:none;/* Hidden by default */
   position: relative; /* Stay in place */
   z-index: 1;
   left: 0;
@@ -1309,17 +1309,22 @@ Breath Plot: COVID-19 Respiration Analysis Software
     FiO2: { v: 31, l: "FiO2", u: "%" },
     Et: { v: 54, l: "Et", u: "%" },
   }
- function openModal(){modal.style.display = "block"
+ function openModal(){
+   console.log("i will open");
+   var modal= document.querySelector(".modal");
+  modal.style.display = "block"
 
 }
+
   function set_vent_outputs(outputs) {
     var el = document.getElementById('vent-outputs');
     var keys = Object.keys(outputs);
     keys.forEach(i => {
       var node = document.createElement('vent-output');
-      node.setAttribute(onclick,"openModal")
+      node.addEventListener("click", () => this.openModal());
       INPUT_KEYS.forEach(j => {
         node.setAttribute(j, outputs[i][j]);
+        
       });
       el.appendChild(node);
     });
@@ -1701,7 +1706,7 @@ Breath Plot: COVID-19 Respiration Analysis Software
     $("#control-buttons-row").toggle(clinical_display);
     $("#vent-outputs").toggle(clinical_display);
     $("#top-bar").toggle(clinical_display);
-
+   
     $("#EventsGraph").toggle(!clinical_display);
     $("#calcarea").toggle(!clinical_display);
     $("#trace-area").toggle(!clinical_display);

@@ -8,7 +8,7 @@ class VentOutput extends HTMLElement {
   constructor() {
     super();
     this._ventbutton;
-    this._isSelected = false;
+
     this.attachShadow({ mode: "open" });
     this.shadowRoot.innerHTML = `
 		<style>
@@ -75,7 +75,7 @@ class VentOutput extends HTMLElement {
 			
 		</style>
 		
-		<div class="vent-output">
+		<div class="vent-output" id= "ventOutput">
 			<div class="flex-container">
 				<div class="container">
 					<div>
@@ -91,9 +91,15 @@ class VentOutput extends HTMLElement {
 		</div>		
 		`;
   }
+  openModal() {
+    console.log("open the modal");
+  }
 
   connectedCallback() {
     this._ventbutton = this.shadowRoot.querySelector(".vent-output");
+    this.shadowRoot
+      .querySelector("#ventOutput")
+      .addEventListener("click", () => this.openModal());
   }
 
   diconnectedCallback() {}
@@ -111,3 +117,5 @@ class VentOutput extends HTMLElement {
 }
 
 customElements.define("vent-output", VentOutput);
+let myOutput = new VentOutput();
+console.log(myOutput);

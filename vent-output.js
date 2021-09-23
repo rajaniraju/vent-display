@@ -21,7 +21,7 @@ class VentOutput extends HTMLElement {
 			.vent-output {
 				
 				border: solid 1px #105955;
-				background-color: #90D9D5;
+				background-color: #D1F0ED;
 				border-radius: 10px;
 				cursor: default;
 				padding: 8px 20px 8px 20px;
@@ -59,7 +59,7 @@ class VentOutput extends HTMLElement {
 		
 			.v {
 				font-size: 4em;
-				color: #ffffff;
+				color:  #666699
 				margin:0;
 				padding:0;
 				line-height: 90%;

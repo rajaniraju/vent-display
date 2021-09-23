@@ -8,6 +8,7 @@ class VentOutput extends HTMLElement {
   constructor() {
     super();
     this._ventbutton;
+    this._isSelected = false;
     this.attachShadow({ mode: "open" });
     this.shadowRoot.innerHTML = `
 		<style>
@@ -108,4 +109,5 @@ class VentOutput extends HTMLElement {
     }
   }
 }
+
 customElements.define("vent-output", VentOutput);

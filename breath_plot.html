@@ -160,7 +160,7 @@ Breath Plot: COVID-19 Respiration Analysis Software
   }
 
   #display {
-    background-color: #D1F0ED;
+    background-color: black;
   }
 
   #control-buttons-row {
@@ -204,22 +204,22 @@ Breath Plot: COVID-19 Respiration Analysis Software
 /* The Modal (background) */
 .modal {
    display:none;/* Hidden by default */
-  position: relative; /* Stay in place */
-  z-index: 1;
+  position:fixed; /* Stay in place */
+  z-index:1 ;
   left: 0;
   top: 0;
-  width: 100%; /* Full width */
-  height: 20%; /* Full height */
+  width: 30%; /* Full width */
+  height: 60%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
   background-color: rgb(0,0,0); /* Fallback color */
   background-color: rgba(240, 94, 94, 0.4); /* Black w/ opacity */
 }
 .flex-container {
 			display: flex;
-			flex-direction: row;
+			flex-direction:row;
 			justify-content: space-between;
 			flex-wrap: wrap;
-      background-color: #fefefe;
+      background-color: #011311;
       margin: 2% auto; /* 15% from the top and centered */
       padding: 2px;
       border: 1px solid #888;
@@ -228,26 +228,29 @@ Breath Plot: COVID-19 Respiration Analysis Software
 		}
 .inputBlock{
   display:flex;
-  background-color: #D1F0ED;
+  background-color: #011311;
   justify-content: center;
   position:relative;
  
-  width:100%;
+  width:80%;
   height:50%;
 }
+
 .inputLabel{
   font-size: 2em;
 				color:black;
 				margin:0;
 				padding:0;
 				line-height: 100%;
+         color:greenyellow;
 }
 .inputElement{
   display: inline;
   justify-content: center;
-  
+  width:50%;
   line-height:100%;
-  font-size: 3em;
+  font-size: 2em;
+ background-color:whitesmoke ;
  
 }
 
@@ -255,7 +258,9 @@ Breath Plot: COVID-19 Respiration Analysis Software
 .modal-content {
   
 }
-
+.PFGraph{
+  background-color: black;
+}
 /* The Close Button */
 .close {
   color: #aaa;
@@ -347,7 +352,7 @@ Breath Plot: COVID-19 Respiration Analysis Software
           <button type="button" class="btn btn-primary">Clock</button>
         </div>
         
-        <div class="col-6 top-row" id="alarm-tab">
+        <div class="col- top-row" id="alarm-tab">
           <button type="button" class="btn btn-danger">Pressure too high!</button>
         </div>
         <div class="col-3 top-row" id="top-right">
@@ -369,18 +374,28 @@ Breath Plot: COVID-19 Respiration Analysis Software
           </div>
           
 <!-- The Modal -->
-<div id="myModal" class="modal">
+<div id="myModal" class="modal ">
 
   <!-- Modal content -->
   <div class="flex-container">
     <span id="close" class="close">&times;</span>
-    <div class="inputBlock"><span class="inputLabel">H:</span><span><input class="inputElement" type="text"value ="70"></span></div>
-    <div class="inputBlock"><span class="inputLabel">L:</span><span ><input class="inputElement" type="text"value="48"></span></div>
+   
+    <div class="inputBlock">
+      <div>
+      <span class="inputLabel">H:</span>
+      <span><input class="inputElement" type="number"value ="70"></span>
+   </div>
+   <div>
+    <span class="inputLabel">L:</span>
+    <span ><input class="inputElement" type="number"value="48"></span>
+    </div>
+  </div>
+ 
   </div>
 
 </div>
           <div id="PlotArea">
-            <div id='PFGraph'>
+            <div id='PFGraph' >
               <!-- Pressure and Flow Graph -->
             </div>
             <div id='EventsGraph'>
